@@ -37,7 +37,7 @@ function ExpensesOverview(){
 export default function App() {
   return (
     <>
-     <StatusBar style="auto" />
+     <StatusBar style="auto"/>
      <NavigationContainer>
       <stack.Navigator>
         <stack.Screen name='ExpensesOverview' 
