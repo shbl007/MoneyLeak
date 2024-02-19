@@ -1,5 +1,9 @@
 import { useLayoutEffect } from "react";
-import { Text } from "react-native";
+import {  View,StyleSheet } from "react-native";
+import {Ionicons} from '@expo/vector-icons'
+import { GlobalStyles } from "../constants/styles";
+import IconButton from "../components/UI/IconButton";
+import Button from "../components/UI/Button";
 
 function ManageExpense({route,navigation}) {
 
@@ -12,7 +16,49 @@ navigation.setOptions({
 });
 },[navigation, isEditing]);
 
-return <Text> ManageExpenses Screen</Text>;
+function deleteExpenseHandler(){
+
+}
+
+function cancelHandler(){
+
+}
+
+function confirmHandler(){
+
+}
+
+return (
+<View style={styles.container}>
+    <View>
+        <Button mode="flat" onPress={cancelHandler}>Cancel</Button>
+        <Button onPress={confirmHandler}>{isEditing ? 'Update' :'Add'}</Button>
+    </View>
+    {isEditing && (
+        <View style={styles.deleteContainer}>
+    <IconButton icon="trash" 
+     color={GlobalStyles.colors.error500}
+     size={36} 
+     onPress={deleteExpenseHandler}/>
+     </View>
+     )}
+</View>
+);
 }
 
 export default ManageExpense;
+
+const styles=StyleSheet.create({
+    container:{
+        flex:1,
+        padding:24,
+        backgroundColor: GlobalStyles.colors.primary800,
+    },
+    deleteContainer:{
+        marginTop: 16,
+        paddingTop:8,
+        borderTopWidth:2,
+        borderTopColor: GlobalStyles.colors.primary200,
+        alignItems:'center'
+    }
+});
