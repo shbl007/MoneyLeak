@@ -11,7 +11,7 @@ const DUMMY_EXPENSES = [
         id: 'e2',
         description: 'A pair of socks ',
         amount : 75,
-        date: new Date('2022-11-06')
+        date: new Date('2024-02-18')
     },
     {
         id: 'e3',
@@ -29,7 +29,7 @@ const DUMMY_EXPENSES = [
         id: 'e5',
         description: 'A Coffe Mug',
         amount : 750,
-        date: new Date('2026-10-06')
+        date: new Date('2024-02-20')
     },
     {
         id: 'e6',
@@ -45,9 +45,9 @@ const DUMMY_EXPENSES = [
     },
     {
         id: 'e8',
-        description: 'A pair of hooks ',
+        description: 'Buy udemy course ',
         amount : 65,
-        date: new Date('2023-02-23')
+        date: new Date('2024-02-20')
     },
     {
         id: 'e9',
@@ -59,7 +59,7 @@ const DUMMY_EXPENSES = [
         id: 'e10',
         description: 'A Coffe Mug',
         amount : 750,
-        date: new Date('2026-10-06')
+        date: new Date('2024-01-06')
     },
 ];
 
@@ -113,7 +113,7 @@ const value = {
     updateExpense:updateExpense
 };
 
-return <ExpensesContext.Provider>{children}</ExpensesContext.Provider>
+return <ExpensesContext.Provider value={value}>{children}</ExpensesContext.Provider>
 }
 
 export default ExpensesContextProvider;
